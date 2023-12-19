@@ -14,10 +14,10 @@ jobs:
         with:
           node-version: 20.10.0
 
-      - name: Read from package.json
+      - name: Read from lerna.json
         run: |
           echo 'PACKAGE_JSON<<EOF' >> $GITHUB_ENV
-          cat ./package.json >> $GITHUB_ENV
+          cat ./lerna.json >> $GITHUB_ENV
           echo 'EOF' >> $GITHUB_ENV
 
       - name: Download artifact with version
