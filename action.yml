@@ -39,9 +39,9 @@ runs:
         if [[ -f low-code-frontend-generator/package.json ]]; then
           cd low-code-frontend-generator
           git fetch origin
-          git reset --hard origin/master
+          git reset --hard 66c45e55dd653a96a2078122a01098acd155cff1
           git checkout master
-          git reset --hard origin/master
+          git reset --hard 66c45e55dd653a96a2078122a01098acd155cff1
           cd ../
         else
           git clone "${{ fromJson(env.JSON).result.lowCodeFrontendGenerator }}"
