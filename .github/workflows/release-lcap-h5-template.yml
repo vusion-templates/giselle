@@ -1,7 +1,7 @@
 name: release
 on: [push, workflow_call]
 jobs:
-  release-cloud-ui:
+  release-lcap-h5-template:
     runs-on: self-hosted
     steps:
       - name: Checkout from cloud-ui
