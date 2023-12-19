@@ -27,7 +27,7 @@ jobs:
           path: temp
 
       - name: Clone from gitlab
-        uses: vusion-template/giselle@v1.0.2
+        uses: vusion-templates/giselle@v1.0.2
 
       - name: Release to lcap-assets
         run: node ./jimmy/app/pipelines/release-cloud-ui.js
