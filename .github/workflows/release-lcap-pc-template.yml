@@ -30,4 +30,4 @@ jobs:
         uses: vusion-templates/giselle@v1.0.2
 
       - name: Release to lcap-assets
-        run: node ./jimmy/app/pipelines/release-cloud-ui.js
+        run: node ./jimmy/app/pipelines/release-lcap-pc-template.js
