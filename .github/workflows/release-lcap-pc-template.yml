@@ -27,7 +27,7 @@ jobs:
           path: temp
 
       - name: Clone from gitlab
-        uses: vusion-templates/giselle@v1.0.2
+        uses: vusion-templates/giselle@v1.0.3
 
       - name: Release to lcap-assets/low-code-frontend-generator
         run: node ./jimmy/app/pipelines/release-lcap-pc-template.js
