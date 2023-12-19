@@ -35,3 +35,15 @@ runs:
           git clone "${{ fromJson(env.JSON).result.lcapAssets }}"
         fi
       shell: bash
+    - run:  |
+        if [[ -f low-code-frontend-generator/package.json ]]; then
+          cd low-code-frontend-generator
+          git fetch origin
+          git reset --hard origin/master
+          git checkout master
+          git reset --hard origin/master
+          cd ../
+        else
+          git clone "${{ fromJson(env.JSON).result.lowCodeFrontendGenerator }}"
+        fi
+      shell: bash
