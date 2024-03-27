@@ -30,7 +30,7 @@ jobs:
         uses: vusion-templates/giselle@v1.0.8
 
       - name: Release to lcap-assets/low-code-frontend-generator
-        run: node ./jimmy/app/pipelines/release-lcap-pc-template.js
+        run: node ./jimmy/app/pipelines/github/release-lcap-pc-template.js
 
       - name: Alert from Github
         if: ${{ failure() }}
