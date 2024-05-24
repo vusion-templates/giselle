@@ -14,28 +14,8 @@ jobs:
         with:
           node-version: 20.10.0
 
-      - name: Read from package.json
-        run: |
-          echo 'PACKAGE_JSON<<EOF' >> $GITHUB_ENV
-          cat ./package.json >> $GITHUB_ENV
-          echo 'EOF' >> $GITHUB_ENV
-
-      - name: Clean folder temp
-        run: |
-          rm -rf temp
-
-      - name: Download artifact with version
-        uses: actions/download-artifact@v4
-        with:
-          name: "lcap-template@${{ fromJson(env.PACKAGE_JSON).version }}"
-          path: temp
-
       - name: Clone from gitlab
         uses: vusion-templates/giselle@v1.0.8
 
-      - name: Release to lcap-assets/low-code-frontend-generator
-        run: node ./jimmy/app/pipelines/github/release-lcap-template.js
-
-      - name: Alert from Github
-        if: ${{ failure() }}
-        run: node ./jimmy/app/pipelines/github/alert-github.js
+      - name: Deploy to bucket
+        run: node ./jimmy/app/pipelines/github/deploy-lcap-template.js
